@@ -7,7 +7,7 @@
 [![paper](https://img.shields.io/badge/Paper-<COLOR>.svg)](https://dl.acm.org/doi/pdf/10.1145/3746027.3754959)
 
 ## Please read this before using the repository
-The implementation of our method consists of three stages. The first stage uses a pre-trained semantic segmentation model to obtain instance masks from the annotated object detection training set (this code corresponds to the complete version of this stage). The second stage generates content based on masks and prompts, and performs counterfactual augmentation using the masks (this stage is carried out during the LDM generation process). The third stage applies random insertion augmentation during the data augmentation phase prior to detector training.。
+The implementation of our method consists of three stages. The first stage uses a pre-trained semantic segmentation model to obtain instance masks from the annotated object detection training set (this code corresponds to the complete version of this stage). The second stage generates content based on masks and prompts, and performs counterfactual augmentation using the masks (this stage is carried out during the LDM generation process). The third stage applies random insertion augmentation during the data augmentation phase prior to detector training.
 
 ## Framework
 ![Framework](./data/OPCD.png)
@@ -27,7 +27,7 @@ python imagecorruptions.py
 
 
 ## Step 1: Mask acquisition
-Here we provide the code implementation based on SAM, and migrating it to SAM2 requires only minor modifications. For deploying the SAM environment, please refer to the official documentation [INSTALL.md](seg-req/INSTALL.md) and download the checkpoint [ViT-B SAM model.](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth).
+Here we provide the code implementation based on SAM, and migrating it to SAM2 requires only minor modifications. For deploying the SAM environment, please refer to the official documentation [INSTALL.md](seg-req/INSTALL.md) and download the checkpoint [ViT-B SAM model](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth).
 ```shell
 # Generation of instance-level segmentation masks
 # Before proceeding, all annotations are converted to the YOLO format.
